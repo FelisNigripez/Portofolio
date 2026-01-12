@@ -50,7 +50,9 @@ body.darkmode .Navbar {
 
 .navbar-nav {
     display: flex;
-    gap: 1rem;
+    gap: 5rem;
+    flex: 1;
+    justify-content: center;
 }
 
 .navbar-nav button {
@@ -97,7 +99,7 @@ body.darkmode .navbar-nav1 {
 }
 
 .navbar-nav1 a {
-    padding: 0.5rem 0;
+    padding: 0.5rem 1rem;
     text-decoration: none;
     color: #333;
     transition: color 0.3s;
@@ -112,7 +114,7 @@ body.darkmode .navbar-nav1 a {
 }
 
 .navbar-extra {
-    display: flex;
+    display: none;
     gap: 1rem;
 }
 
@@ -378,8 +380,17 @@ body.darkmode .background {
         display: flex;
     }
 
+    .navbar-extra {
+        display: flex;
+    }
+
     .Navbar {
-        padding: 1rem;
+        padding: 0.5rem 1rem;
+        flex-wrap: wrap;
+    }
+
+    .navbar-logo {
+        font-size: 1.2rem;
     }
 
     .invitation {
@@ -388,7 +399,99 @@ body.darkmode .background {
     }
 
     .logo-sosmed {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .logo a {
+        font-size: 0.8rem;
+    }
+}
+
+/* iPad Styles */
+@media (min-width: 481px) and (max-width: 768px) {
+    .name-gap4 h1 {
+        font-size: 1.8rem;
+    }
+
+    .ppoutside {
+        width: 120px;
+        height: 120px;
+    }
+
+    .foto img {
+        width: 105px;
+        height: 105px;
+    }
+
+    .invitation {
+        margin: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .logo-sosmed {
+        gap: 0.8rem;
+    }
+
+    label[for="darkmode-toggle"] {
+        top: 4rem;
+        right: 1.5rem;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+    .name-gap4 h1 {
+        font-size: 1.5rem;
+    }
+
+    .Navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    .ppoutside {
+        width: 100px;
+        height: 100px;
+    }
+
+    .foto img {
+        width: 85px;
+        height: 85px;
+    }
+
+    .invitation {
+        margin: 0.5rem;
+        padding: 1rem;
+    }
+
+    .logo-sosmed {
+        gap: 0.5rem;
+    }
+
+    .logo a {
+        padding: 0.4rem;
+    }
+
+    label[for="darkmode-toggle"] {
+        top: 3rem;
+        right: 1rem;
+        width: 50px;
+        height: 25px;
+    }
+
+    .moon, .sun {
+        width: 18px;
+        height: 18px;
+    }
+
+    .background {
+        width: 21px;
+        height: 21px;
+    }
+
+    body.darkmode .background {
+        transform: translateX(25px);
     }
 }
