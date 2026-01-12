@@ -1,0 +1,371 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.darkmode {
+    background-color: #1a1a1a;
+    color: #f4f4f4;
+}
+
+/* Navbar Styles */
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+body.darkmode .Navbar {
+    background-color: #2a2a2a;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.navbar-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-logo span {
+    color: #007bff;
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar-nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.navbar-nav a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+body.darkmode .navbar-nav a {
+    color: #f4f4f4;
+}
+
+.navbar-nav a:hover {
+    color: #007bff;
+}
+
+.navbar-nav1 {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
+}
+
+body.darkmode .navbar-nav1 {
+    background-color: #2a2a2a;
+}
+
+.navbar-nav1.active {
+    display: flex;
+}
+
+.navbar-nav1 a {
+    padding: 0.5rem 0;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+body.darkmode .navbar-nav1 a {
+    color: #f4f4f4;
+}
+
+.navbar-nav1 a:hover {
+    color: #007bff;
+}
+
+.navbar-extra {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar-extra a {
+    color: #333;
+    transition: color 0.3s;
+}
+
+body.darkmode .navbar-extra a {
+    color: #f4f4f4;
+}
+
+.navbar-extra a:hover {
+    color: #007bff;
+}
+
+/* Profile Section Styles */
+#show-invitation-btn {
+    display: block;
+    margin: 5rem auto 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.3s;
+}
+
+#show-invitation-btn:hover {
+    background-color: #0056b3;
+}
+
+.invitation {
+    margin: 2rem;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+body.darkmode .invitation {
+    background-color: #2a2a2a;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.invitation.hidden {
+    display: none;
+}
+
+.pp, .ppside {
+    /* These seem to be placeholder classes, styling as needed */
+    display: none; /* Hide if not used */
+}
+
+.ppoutside {
+    position: relative;
+    width: 170px;
+    height: 170px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ppoutside::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg,
+        transparent 0deg,
+        transparent 45deg,
+        #007bff 45deg,
+        #007bff 90deg,
+        transparent 90deg,
+        transparent 135deg,
+        #ff6b6b 135deg,
+        #ff6b6b 180deg,
+        transparent 180deg,
+        transparent 225deg,
+        #4ecdc4 225deg,
+        #4ecdc4 270deg,
+        transparent 270deg,
+        transparent 315deg,
+        #45b7d1 315deg,
+        #45b7d1 360deg
+    );
+    animation: rotate 2s linear infinite;
+    z-index: 0;
+}
+
+.ppoutside::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+body.darkmode .ppoutside::before {
+    background: #2a2a2a;
+}
+
+.ppoutside:hover::after {
+    animation-duration: 1s;
+}
+
+.foto {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.foto img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.name-gap4 h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.biodata {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo-sosmed {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.darkmode .logo a {
+    background-color: #3a3a3a;
+    color: #f4f4f4;
+}
+
+.logo a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.text-logo {
+    display: none; /* Hide text, show only icons */
+}
+
+/* Dark Mode Toggle Styles */
+#darkmode-toggle {
+    display: none;
+}
+
+label[for="darkmode-toggle"] {
+    position: fixed;
+    top: 5rem;
+    right: 2rem;
+    width: 60px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+    transition: background-color 0.3s;
+}
+
+body.darkmode label[for="darkmode-toggle"] {
+    background-color: #007bff;
+}
+
+.moon, .sun {
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+}
+
+.background {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+body.darkmode .background {
+    transform: translateX(30px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-nav {
+        display: none;
+    }
+
+    .navbar-nav1 {
+        display: none;
+    }
+
+    .navbar-nav1.active {
+        display: flex;
+    }
+
+    .Navbar {
+        padding: 1rem;
+    }
+
+    .invitation {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .logo-sosmed {
+        flex-direction: column;
+        align-items: center;
+    }
+}
