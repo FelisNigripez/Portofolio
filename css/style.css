@@ -150,7 +150,7 @@ body.darkmode .navbar-extra a {
 }
 
 .invitation {
-    margin: 2rem;
+    margin: 1rem;
     padding: 2rem;
     background-color: #fff;
     border-radius: 10px;
@@ -294,6 +294,7 @@ body.darkmode .ppoutside::before {
     gap: 1rem;
 }
 
+
 .logo a {
     display: flex;
     align-items: center;
@@ -313,8 +314,18 @@ body.darkmode .logo a {
 
 .logo a:hover {
     background-color: #007bff;
-    color: white;
+    color: #333;
+    scale: 1.2;
+    transition: all 0.2s ease-in-out;
 }
+
+body.darkmode .logo a:hover {
+    background-color: #007bff;
+    color: white;
+    scale: 1.2;
+    transition: all 0.2s ease-in-out;
+}
+
 
 .text-logo {
     display: none; /* Hide text, show only icons */
